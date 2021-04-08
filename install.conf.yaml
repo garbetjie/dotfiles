@@ -20,3 +20,11 @@
     ~/.gitconfig-tencent:
     ~/.zshrc:
     ~/.zsh:
+
+- defaults:
+    create:
+      mode: 0755
+
+# Create workspace directory.
+- create:
+  - ~/Workspace
