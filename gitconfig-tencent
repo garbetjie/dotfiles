@@ -1,0 +1,5 @@
+[core]
+sshCommand = "ssh -i ~/.ssh/geoff@tencent.co.za -F /dev/null"
+
+[user]
+email = geoff@tencent.co.za
