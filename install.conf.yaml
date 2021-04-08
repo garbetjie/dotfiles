@@ -1,5 +1,18 @@
 ---
+# Homebrew
+- shell:
+  - command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    stdout: true
+    stderr: true
+
+  - command: brew bundle install
+    stdout: true
+    stderr: true
+
 - link:
     ~/.config/starship.toml: starship/starship.toml
+    ~/.dive.yaml:
+    ~/.gitconfig:
+    ~/.gitconfig-tencent:
     ~/.zshrc:
-    ~/.zsh: zsh
+    ~/.zsh:
