@@ -62,4 +62,4 @@ changed = yellow
 untracked = red
 
 [includeIf "gitdir:~/Workspace/tencentafrica/"]
-path = gitconfig-tencent
+path = ~/.gitconfig-tencent
