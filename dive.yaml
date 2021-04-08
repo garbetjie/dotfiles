@@ -1,0 +1,10 @@
+---
+log:
+  enabled: false
+
+diff:
+  hide:
+  - unmodified
+
+filetree:
+  pane-width: 0.6
