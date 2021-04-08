@@ -19,7 +19,7 @@ process = git-lfs filter-process
 
 [core]
 autocrlf = input
-excludesfile = .gitignore
+excludesfile = ~/.gitignore
 
 [commit]
 template = .gitmessage
