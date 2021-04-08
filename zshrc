@@ -1,49 +1,38 @@
 #!/usr/bin/env zsh
 
-# Load dependencies.
-source "$HOME/.zsh/antigen.zsh"
-eval "$(starship init zsh)"
+# aliases & functions {{{
+  source "$HOME/.zsh/aliases.zsh"
+  source "$HOME/.zsh/functions.zsh"
+# }}}
 
 
-# Antigen config.
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-antigen apply
+# starship {{{
+  eval "$(starship init zsh)"
+# }}}
 
 
-# Update paths.
-ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-ANDROID_HOME="$ANDROID_SDK_ROOT"
-GOPATH="$HOME/Go"
+# antigen {{{
+  source "$HOME/.zsh/antigen.zsh"
 
-PATH="$PATH:$HOME/.composer/vendor/bin"
-PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
-PATH="$PATH:$HOME/Workspace/tencentafrica/utils"
-PATH="/usr/local/opt/mysql-client/bin:$PATH"
+  antigen bundle zsh-users/zsh-autosuggestions
+  antigen bundle zsh-users/zsh-syntax-highlighting
 
-export ANDROID_SDK_ROOT ANDROID_HOME GOPATH PATH
+  # shellcheck disable=SC2034
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#505050"
 
-
-# Load in aliases.
-source "$HOME/.zsh/aliases.zsh"
+  antigen apply
+# }}}
 
 
-# Load in functions.
-source "$HOME/.zsh/functions.zsh"
+# paths {{{
+  ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+  ANDROID_HOME="$ANDROID_SDK_ROOT"
+  GOPATH="$HOME/Go"
 
-# # ZSH configuration.
-# ZSH_CUSTOM="~/.zsh"
-#
-# CASE_SENSITIVE="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="false"
-# COMPLETION_WAITING_DOTS="false"
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="yyyy-mm-dd"
-#
-# source ~/.profile
+  PATH="$PATH:$HOME/.composer/vendor/bin"
+  PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
+  PATH="$PATH:$HOME/Workspace/tencentafrica/utils"
+  PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-# Custom additions to load after OMZSH has been loaded.
-# source $ZSH_CUSTOM/plugins/geometry.zsh
-[ -f /usr/local/share/zsh/site-functions ] && source /usr/local/share/zsh/site-functions
+  export ANDROID_SDK_ROOT ANDROID_HOME GOPATH PATH
+# }}}
