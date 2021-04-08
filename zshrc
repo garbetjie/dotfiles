@@ -1,5 +1,7 @@
+#!/usr/bin/env zsh
+
 # Load dependencies.
-source "~/.zsh/antigen.zsh"
+source "$HOME/.zsh/antigen.zsh"
 eval "$(starship init zsh)"
 
 
@@ -24,11 +26,11 @@ export ANDROID_SDK_ROOT ANDROID_HOME GOPATH PATH
 
 
 # Load in aliases.
-source ~/.zsh/aliases.zsh
+source "$HOME/.zsh/aliases.zsh"
 
 
 # Load in functions.
-source ~/.zsh/functions.zsh
+source "$HOME/.zsh/functions.zsh"
 
 # # ZSH configuration.
 # ZSH_CUSTOM="~/.zsh"
