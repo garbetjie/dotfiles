@@ -16,6 +16,7 @@
 - link:
     ~/.config/starship.toml: starship/starship.toml
     ~/.dive.yaml:
+    ~/.gitignore:
     ~/.gitconfig:
     ~/.gitconfig-tencent:
     ~/.zshrc:
