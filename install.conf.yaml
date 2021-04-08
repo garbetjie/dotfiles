@@ -1,0 +1,5 @@
+---
+- link:
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.zshrc:
+    ~/.zsh: zsh
