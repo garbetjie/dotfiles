@@ -100,7 +100,7 @@ disabled = false
 disabled = true
 
 [terraform]
-format = "[$symbol $version $workspace]($style)"
+format = "[$symbol$version$workspace]($style) "
 
 [vagrant]
 disabled = true
