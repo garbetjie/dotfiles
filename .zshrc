@@ -1,27 +1,46 @@
-# Path to your oh-my-zsh installation.
-export ZSH="${HOME}/.zsh"
+# Load dependencies.
+source "~/.zsh/antigen.zsh"
+eval "$(starship init zsh)"
 
-# Set ZSH theme.
-ZSH_THEME="bullet-train"
-ZSH_THEME="geometry/geometry"
-ZSH_THEME="garbetjie"
 
-# ZSH configuration.
-UPDATE_ZSH_DAYS=7
-ZSH_CUSTOM="${HOME}/Workspace/dotfiles/zsh"
+# Antigen config.
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-#HYPHEN_INSENSITIVE="true"
-CASE_SENSITIVE="true"
-DISABLE_AUTO_TITLE="true"
-ENABLE_CORRECTION="false"
-COMPLETION_WAITING_DOTS="false"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
-HIST_STAMPS="yyyy-mm-dd"
-ZSH_CUSTOM="${HOME}/.zsh"
-plugins=(git)
+antigen apply
 
-source $ZSH/oh-my-zsh.sh
-source ~/.profile
+
+# Update paths.
+ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
+ANDROID_HOME="$ANDROID_SDK_ROOT"
+GOPATH="$HOME/Go"
+
+PATH="$PATH:$HOME/.composer/vendor/bin"
+PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
+PATH="$PATH:$HOME/Workspace/tencentafrica/utils"
+PATH="/usr/local/opt/mysql-client/bin:$PATH"
+
+export ANDROID_SDK_ROOT ANDROID_HOME GOPATH PATH
+
+
+# Load in aliases.
+source ~/.zsh/aliases.zsh
+
+
+# Load in functions.
+source ~/.zsh/functions.zsh
+
+# # ZSH configuration.
+# ZSH_CUSTOM="~/.zsh"
+#
+# CASE_SENSITIVE="true"
+# DISABLE_AUTO_TITLE="true"
+# ENABLE_CORRECTION="false"
+# COMPLETION_WAITING_DOTS="false"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# HIST_STAMPS="yyyy-mm-dd"
+#
+# source ~/.profile
 
 # Custom additions to load after OMZSH has been loaded.
 # source $ZSH_CUSTOM/plugins/geometry.zsh
