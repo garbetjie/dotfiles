@@ -2,6 +2,9 @@
 
 alias gtl="git tag -l | cat"
 alias sail="./vendor/bin/sail"
+alias ~="cd ~"
+alias ..="cd ../"
+alias ...="cd ../../"
 
 # kubectl
 alias kc="kubectl"
