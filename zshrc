@@ -29,6 +29,7 @@
   ANDROID_HOME="$ANDROID_SDK_ROOT"
   GOPATH="$HOME/Go"
 
+  PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.local/bin"
   PATH="$PATH:$HOME/.composer/vendor/bin"
   PATH="$PATH:$ANDROID_SDK_ROOT/tools/bin:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools"
   PATH="$PATH:$HOME/Workspace/tencentafrica/utils"
