@@ -16,7 +16,13 @@ disabled = true
 disabled = true
 
 [directory]
+truncation_length = 7
 truncation_symbol = ".../"
+truncate_to_repo = false
+
+[directory.substitutions]
+"/Users/geoff" = "~"
+"/Users/geoffrey.garbers" = "~"
 
 [docker_context]
 disabled = true
