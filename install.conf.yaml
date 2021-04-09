@@ -2,8 +2,23 @@
 - defaults:
     link:
       relink: true
+    create:
+      mode: 0755
 
-# Homebrew
+- create:
+  - ~/Workspace
+  - ~/.config
+
+- link:
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.dive.yaml:
+    ~/.zshrc:
+    ~/.zsh:
+      force: true
+
+
+# homebrew {{{
+
 - shell:
   - command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     stdout: true
@@ -13,19 +28,48 @@
     stdout: true
     stderr: true
 
+# }}}
+
+
+# git {{{
+
 - link:
-    ~/.config/starship.toml: starship/starship.toml
-    ~/.dive.yaml:
     ~/.gitignore:
     ~/.gitconfig:
     ~/.gitconfig-tencent:
-    ~/.zshrc:
-    ~/.zsh:
 
-- defaults:
-    create:
-      mode: 0755
+# }}}
 
-# Create workspace directory.
+
+# 1password {{{
+
+- shell:
+  - |
+    local email
+    printf 'Email address used to log into 1password: '
+    read email
+
+    op signin my.1password.com "$email"
+
+# }}}
+
+
+# ssh {{{
+
 - create:
-  - ~/Workspace
+  - ~/.ssh:
+      mode: 0700
+  - ~/.ssh/conf.d:
+      mode: 0700
+  - ~/.ssh/keys:
+      mode: 0700
+
+- link:
+    ~/.ssh/conf.d:
+    ~/.ssh/config:
+
+- shell:
+  - '[[ ! -f ~/.ssh/keys/tencent ]] && ssh-keygen -t rsa -C tencent -f ~/.ssh/keys/tencent -N "$(eval "$(op signin my)" && op get item 7rh4f2nyvfg3hpxn53qxun6jke | jq -r .details.password)"'
+  - '[[ ! -f ~/.ssh/keys/personal ]] && ssh-keygen -t rsa -C personal -f ~/.ssh/keys/personal -N "$(eval "$(op signin my)" && op get item ubckouhr3vd4njzutpc3k64la4 | jq -r .details.password)"'
+
+# }}}
