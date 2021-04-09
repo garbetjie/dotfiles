@@ -5,6 +5,8 @@ alias sail="./vendor/bin/sail"
 alias ~="cd ~"
 alias ..="cd ../"
 alias ...="cd ../../"
+alias cat="bat -P"
+alias less="bat"
 
 # kubectl
 alias kc="kubectl"
