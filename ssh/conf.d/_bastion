@@ -1,7 +1,7 @@
 ControlMaster auto
 ControlPath /tmp/ssh-%C
 ControlPersist 30m
-IdentityFile ~/.ssh/id_rsa
+IdentityFile ~/.ssh/keys/tencent
 StrictHostKeyChecking no
 User geoff
 UserKnownHostsFile /dev/null

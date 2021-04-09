@@ -3,3 +3,4 @@ Include conf.d/*.conf
 Host *
     ServerAliveInterval 30s
     Compression yes
+    IdentityFile ~/.ssh/keys/personal
