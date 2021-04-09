@@ -4,6 +4,10 @@
       relink: true
     create:
       mode: 0755
+    shell:
+      stdin: true
+      stdout: true
+      stderr: true
 
 - create:
   - ~/Workspace
@@ -44,12 +48,14 @@
 # 1password {{{
 
 - shell:
-  - |
-    local email
-    printf 'Email address used to log into 1password: '
-    read email
+  - command: |
+      local email
+      printf 'Email address used to log into 1password: '
+      read email
 
-    op signin my.1password.com "$email"
+      op signin my.1password.com "$email"
+    description: Log into 1Password.
+    quiet: true
 
 # }}}
 
