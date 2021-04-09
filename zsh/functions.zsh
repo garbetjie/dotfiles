@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+function clear_dns() {
+  sudo killall -HUP mDNSResponder;
+}
+
 function man-preview() {
   man -t "$@" | open -f -a Preview
 }
