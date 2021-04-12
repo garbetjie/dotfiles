@@ -9,43 +9,31 @@
       stdout: true
       stderr: true
 
+- shell:
+  - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  - brew bundle install
+
 - create:
   - ~/Workspace
   - ~/.config
+  - ~/.ssh:
+      mode: 0700
+  - ~/.ssh/conf.d:
+      mode: 0700
+  - ~/.ssh/keys:
+      mode: 0700
 
 - link:
     ~/.config/starship.toml: starship/starship.toml
     ~/.dive.yaml:
-    ~/.zshrc:
-    ~/.zsh:
-      force: true
-
-
-# homebrew {{{
-
-- shell:
-  - command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    stdout: true
-    stderr: true
-
-  - command: brew bundle install
-    stdout: true
-    stderr: true
-
-# }}}
-
-
-# git {{{
-
-- link:
     ~/.gitignore:
     ~/.gitconfig:
     ~/.gitconfig-tencent:
-
-# }}}
-
-
-# 1password {{{
+    ~/.ssh/conf.d:
+    ~/.ssh/config:
+    ~/.zshrc:
+    ~/.zsh:
+      force: true
 
 - shell:
   - command: |
@@ -57,25 +45,8 @@
     description: Log into 1Password.
     quiet: true
 
-# }}}
+  - |
+    scripts/sshkeys.zsh \
+      personal:ubckouhr3vd4njzutpc3k64la4:otdk3omgpbatxkq4ultfxghyui \
+      tencent:7rh4f2nyvfg3hpxn53qxun6jke:ye3wb6dg7ja3bpbkfg4hv354ny
 
-
-# ssh {{{
-
-- create:
-  - ~/.ssh:
-      mode: 0700
-  - ~/.ssh/conf.d:
-      mode: 0700
-  - ~/.ssh/keys:
-      mode: 0700
-
-- link:
-    ~/.ssh/conf.d:
-    ~/.ssh/config:
-
-- shell:
-  - '[[ ! -f ~/.ssh/keys/tencent ]] && ssh-keygen -t rsa -C tencent -f ~/.ssh/keys/tencent -N "$(eval "$(op signin my)" && op get item 7rh4f2nyvfg3hpxn53qxun6jke | jq -r .details.password)"'
-  - '[[ ! -f ~/.ssh/keys/personal ]] && ssh-keygen -t rsa -C personal -f ~/.ssh/keys/personal -N "$(eval "$(op signin my)" && op get item ubckouhr3vd4njzutpc3k64la4 | jq -r .details.password)"'
-
-# }}}

@@ -1,6 +1,8 @@
 Include conf.d/*.conf
 
 Host *
-    ServerAliveInterval 30s
+    AddKeysToAgent yes
     Compression yes
     IdentityFile ~/.ssh/keys/personal
+    ServerAliveInterval 30s
+    UseKeychain yes
