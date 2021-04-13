@@ -58,3 +58,8 @@
       personal:ubckouhr3vd4njzutpc3k64la4:otdk3omgpbatxkq4ultfxghyui \
       tencent:7rh4f2nyvfg3hpxn53qxun6jke:ye3wb6dg7ja3bpbkfg4hv354ny
 
+- shell:
+  - defaults write com.apple.Finder FXPreferredViewStyle clmv
+  - defaults write com.apple.finder _FXSortFoldersFirst -bool true
+  - defaults write com.apple.finder FXDefaultSearchScope SCcf
+  - killall Finder
