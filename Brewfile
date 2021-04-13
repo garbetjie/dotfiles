@@ -47,8 +47,10 @@ brew "youtube-dl"
 brew "yq"
 
 # Apps
-cask "1password"
+# cask "1password"  # via App Store.
 cask "1password-cli"
+# cask "affinity-designer-beta"  # via App Store.
+# cask "affinity-photo-beta"  # via App Store.
 cask "android-file-transfer"
 cask "android-studio"
 cask "charles"
@@ -87,6 +89,7 @@ cask "ngrok"
 cask "obs"
 cask "postman"
 cask "rectangle"
+# cask "slack"  # via App Store.
 cask "soapui"
 cask "steam"
 cask "sublime-text"
@@ -96,5 +99,7 @@ cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 cask "vlc"
+# cask "wechat"  # via App Store.
+# cask "whatsapp"  # via App Store.
 cask "wine-stable"
 cask "wkhtmltopdf"
