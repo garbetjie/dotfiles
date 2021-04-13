@@ -13,7 +13,9 @@
   - xcode-select --install || true
   - sudo softwareupdate --install-rosetta || true
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  - sudo spctl --master-disable
   - export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}" && brew bundle install
+  - sudo spctl --master-enable
 
 - create:
   - ~/Workspace

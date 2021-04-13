@@ -97,7 +97,7 @@ cask "soapui"
 cask "steam"
 cask "sublime-text"
 cask "transmission"
-cask "tuntap"
+# cask "tuntap"  # no longer available
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
