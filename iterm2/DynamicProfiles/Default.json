@@ -1,7 +1,9 @@
 {
+"Profiles": [
+{
   "Custom Directory" : "No",
   "Set Local Environment Vars" : true,
-  "Working Directory" : "\/Users\/geoffrey.garbers",
+  "Working Directory" : "\/Users\/geoff",
   "Prompt Before Closing 2" : 0,
   "Selected Text Color" : {
     "Red Component" : 0,
@@ -69,8 +71,8 @@
         "class" : "iTermStatusBarWorkingDirectoryComponent",
         "configuration" : {
           "knobs" : {
+            "path" : "path",
             "minwidth" : 0,
-            "base: priority" : 5,
             "shared text color" : {
               "Red Component" : 0.90000000000000002,
               "Color Space" : "sRGB",
@@ -78,6 +80,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.63
             },
+            "base: priority" : 5,
             "base: compression resistance" : 1,
             "maxwidth" : 1.7976931348623157e+308
           },
@@ -125,12 +128,15 @@
             }
           },
           "layout advanced configuration dictionary value" : {
+            "font" : ".AppleSystemUIFont 12",
             "algorithm" : 0
           }
         }
       }
     ],
     "advanced configuration" : {
+      "remove empty components" : false,
+      "auto-rainbow style" : 0,
       "font" : ".AppleSystemUIFont 12",
       "algorithm" : 0
     }
@@ -440,7 +446,7 @@
   },
   "Default Bookmark" : "No",
   "Disable Smcup Rmcup" : false,
-  "Name" : "Default",
+  "Name" : "Geoff",
   "Blinking Cursor" : false,
   "Cursor Color" : {
     "Red Component" : 0.89585232734680176,
@@ -530,6 +536,7 @@
     "Green Component" : 0.12215268611907959
   },
   "Screen" : -1,
+  "Initial Use Transparency" : false,
   "Non Ascii Font" : "FiraCodeNerdFontCompleteM-Regular 11",
   "Ansi 13 Color" : {
     "Red Component" : 0.98751437664031982,
@@ -549,4 +556,6 @@
     "Alpha Component" : 1,
     "Green Component" : 0.29879066348075867
   }
+}
+]
 }

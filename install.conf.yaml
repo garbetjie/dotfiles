@@ -35,6 +35,7 @@
     ~/.zshrc:
     ~/.zsh:
       force: true
+    ~/Library/Application Support/iTerm2/DynamicProfiles: iterm2/DynamicProfiles
 
 - shell:
   - command: |
