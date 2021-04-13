@@ -59,27 +59,27 @@ cask "docker"
 cask "dropbox"
 cask "envkey"
 cask "firefox"
-cask "font-code"
+# cask "font-code"  # no longer available
 cask "font-devicons"
-cask "font-droid-sans"
-cask "font-droid-sans-mono"
+# cask "font-droid-sans"  # no longer available
+# cask "font-droid-sans-mono"  # no longer available
 cask "font-droid-sans-mono-for-powerline"
 cask "font-fira-code"
 cask "font-fira-code-nerd-font"
 cask "font-hack"
 cask "font-hack-nerd-font"
-cask "font-hack-nerd-font-mono"
+# cask "font-hack-nerd-font-mono"  # no longer available
 cask "font-inconsolata-dz-for-powerline"
 cask "font-inconsolata-for-powerline"
 cask "font-inconsolata-g-for-powerline"
 cask "font-iosevka"
 cask "font-iosevka-nerd-font"
 cask "font-monoid"
-cask "font-noto-nerd-font-mono"
+# cask "font-noto-nerd-font-mono"  # no longer available
 cask "font-roboto-mono"
 cask "font-roboto-mono-for-powerline"
-cask "font-robotomono-nerd-font"
-cask "font-robotomono-nerd-font-mono"
+# cask "font-robotomono-nerd-font"  # no longer available
+# cask "font-robotomono-nerd-font-mono"  # no longer available
 cask "google-chrome"
 cask "google-cloud-sdk"
 cask "google-drive"

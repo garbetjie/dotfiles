@@ -11,17 +11,19 @@
 
 - shell:
   - xcode-select --install || true
+  - sudo softwareupdate --install-rosetta || true
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   - export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}" && brew bundle install
 
 - create:
   - ~/Workspace
   - ~/.config
-  - ~/.ssh:
+  - ~/Library/Application Support/iTerm2
+
+- create:
+    ~/.ssh:
       mode: 0700
-  - ~/.ssh/conf.d:
-      mode: 0700
-  - ~/.ssh/keys:
+    ~/.ssh/keys:
       mode: 0700
 
 - link:
@@ -30,12 +32,14 @@
     ~/.gitignore:
     ~/.gitconfig:
     ~/.gitconfig-tencent:
-    ~/.ssh/conf.d:
-    ~/.ssh/config:
+    ~/.ssh/conf.d: ssh/conf.d
+    ~/.ssh/config: ssh/config
     ~/.zshrc:
     ~/.zsh:
       force: true
-    ~/Library/Application Support/iTerm2/DynamicProfiles: iterm2/DynamicProfiles
+    ~/Library/Application Support/iTerm2/DynamicProfiles:
+      path: iterm2/DynamicProfiles
+      force: true
 
 - shell:
   - command: |
