@@ -12,7 +12,7 @@
 - shell:
   - xcode-select --install || true
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  - brew bundle install
+  - export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}" && brew bundle install
 
 - create:
   - ~/Workspace
