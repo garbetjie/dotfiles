@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
-# aliases & functions {{{
+# shell configuration {{{
   source "$HOME/.zsh/aliases.zsh"
   source "$HOME/.zsh/functions.zsh"
+
+  setopt HIST_FIND_NO_DUPS
 # }}}
 
 
