@@ -62,4 +62,14 @@
   - defaults write com.apple.Finder FXPreferredViewStyle clmv
   - defaults write com.apple.finder _FXSortFoldersFirst -bool true
   - defaults write com.apple.finder FXDefaultSearchScope SCcf
+  - defaults write com.apple.dock minimize-to-application -bool true
+  - defaults write com.apple.dock tilesize -float 33
+  - defaults write com.apple.dock magnification -bool true
+  - defaults write com.apple.dock largesize -float 65
+  - defaults write com.apple.dock minimize-to-application -bool true
+  - defaults write com.apple.dock autohide -bool true
+  - defaults write com.apple.dock show-recents -bool false
+  - defaults write com.apple.menuextra.clock DateFormat "EEE MMM d  H:mm:ss"
+  - defaults write com.apple.menuextra.clock IsAnalog -bool false
+  - defaults write com.apple.menuextra.battery ShowPercent YES
   - killall Finder
