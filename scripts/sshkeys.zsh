@@ -21,7 +21,7 @@ while [ $# -gt 0 ]; do
   privkey_path="${keyfile_path}/${key_name}"
   pubkey_path="${privkey_path}.pub"
 
-  if [ -f "$privkey_path" ] || [ -f "$pubkey_path" ]; then
+  if [ ! -f "$privkey_path" ] || [ ! -f "$pubkey_path" ]; then
     sign_in
 
     passphrase="$(op get item "$passphrase_uuid" | jq -r .details.password)"
