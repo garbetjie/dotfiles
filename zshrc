@@ -17,7 +17,7 @@
   source "$HOME/.zsh/functions.zsh"
 
   # shell history handling
-  setopt HIST_FIND_NO_DUPS
+  setopt HIST_FIND_NO_DUPS INC_APPEND_HISTORY_TIME
 # }}}
 
 
