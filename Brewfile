@@ -60,6 +60,7 @@ cask "dropbox"
 cask "envkey"
 cask "firefox"
 # cask "font-code"  # no longer available
+cask "font-consolas-for-powerline"
 cask "font-devicons"
 # cask "font-droid-sans"  # no longer available
 # cask "font-droid-sans-mono"  # no longer available
