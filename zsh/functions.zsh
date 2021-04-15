@@ -4,6 +4,10 @@ function clear_dns() {
   sudo killall -HUP mDNSResponder;
 }
 
+function set_gcloud_config() {
+  echo "$PWD"
+}
+
 function man-preview() {
   man -t "$@" | open -f -a Preview
 }

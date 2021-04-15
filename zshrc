@@ -12,9 +12,17 @@
   PATH="$PATH:$HOME/Workspace/tencentafrica/utils"
   PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
+  # cache the brew prefix, so it doesn't need to be run multiple times.
+  brew_prefix="$(brew --prefix)"
+
   # aliases and functions
   source "$HOME/.zsh/aliases.zsh"
   source "$HOME/.zsh/functions.zsh"
+  source "${brew_prefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+#  source "${brew_prefix}/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"  # see https://github.com/zsh-users/zsh-completions/issues/539
+
+  # determine the gcloud config to use.
+#  chpwd_functions=(${chpwd_functions[@]} "set_gcloud_config")
 
   # shell history handling
   setopt HIST_FIND_NO_DUPS INC_APPEND_HISTORY_TIME
