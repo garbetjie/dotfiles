@@ -42,6 +42,8 @@
     ~/Library/Application Support/iTerm2/DynamicProfiles:
       path: iterm2/DynamicProfiles
       force: true
+    ~/Library/Application Support/iTerm2/shell_integration.zsh:
+      path: iterm2/shell_integration.zsh
 
 - shell:
   - command: |
@@ -65,7 +67,7 @@
   - defaults write com.apple.dock minimize-to-application -bool true
   - defaults write com.apple.dock tilesize -float 33
   - defaults write com.apple.dock magnification -bool true
-  - defaults write com.apple.dock largesize -float 65
+  - defaults write com.apple.dock largesize -float 60
   - defaults write com.apple.dock minimize-to-application -bool true
   - defaults write com.apple.dock autohide -bool true
   - defaults write com.apple.dock show-recents -bool false
@@ -74,4 +76,6 @@
   - defaults write com.apple.menuextra.battery ShowPercent YES
   - /usr/libexec/PlistBuddy -c 'Set :StandardViewOptions:ColumnViewOptions:FontSize 12' ~/Library/Preferences/com.apple.finder.plist
   - defaults write -g com.apple.swipescrolldirection -bool false
+  - osacompile -o '/Applications/Color Picker.app' -e 'choose color'  # TODO Add an icon.
   - killall Finder
+  - killall Dock
