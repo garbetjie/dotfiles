@@ -16,3 +16,4 @@ alias kcp="kubectl --context gke_tencentafrica-prod-joox_europe-west4_main"
 # terraform
 alias tfp="terraform plan -parallelism 50 -out run.plan"
 alias tfa="terraform apply run.plan"
+alias tfpall='terraform plan -parallelism 50 -out run.plan -var-file="$(terraform workspace show).tfvars" -var "release=$(git describe --always)"'
