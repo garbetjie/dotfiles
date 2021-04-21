@@ -28,7 +28,9 @@
 #  chpwd_functions=(${chpwd_functions[@]} "set_gcloud_config")
 
   # shell history handling
-  setopt HIST_FIND_NO_DUPS INC_APPEND_HISTORY_TIME
+  export HISTSIZE=1000000
+  export HISTFILESIZE=1000000
+  setopt HIST_FIND_NO_DUPS HIST_IGNORE_DUPS SHARE_HISTORY
 # }}}
 
 
