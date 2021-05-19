@@ -11,7 +11,7 @@
 
 - shell:
   - xcode-select --install || true
-  - sudo softwareupdate --install-rosetta || true
+  - sudo softwareupdate --install-rosetta --agree-to-license || true
   - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   - sudo spctl --master-disable
   - export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}" && brew bundle install
@@ -82,6 +82,8 @@
   - killall Dock
 
 - shell:
+  - gcloud components update --quiet
+  - gcloud components install cloud_sql_proxy --quiet
   - |
     cd ~/.local/bin
     wget -O- https://github.com/envkey/envkey-source/releases/download/v1.2.10/envkey-source_1.2.10_darwin_arm64.tar.gz | tar -zxf - envkey-source
