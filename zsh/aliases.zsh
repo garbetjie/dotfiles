@@ -7,6 +7,7 @@ alias ..="cd ../"
 alias ...="cd ../../"
 alias cat="bat -P"
 alias less="bat"
+alias ll="ls -lahG"
 
 # kubectl
 alias kc="kubectl"

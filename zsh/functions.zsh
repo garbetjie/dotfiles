@@ -38,6 +38,25 @@ function b64() {
   echo "$b64" | base64 -d
 }
 
+function cloudsql() {
+  # Ensure we have the SQL proxy installed.
+  if ! type cloud_sql_proxy > /dev/null; then
+    echo "CloudSQL Proxy not found. Ensure it is available in your \$PATH."
+    return 1
+  fi
+
+  local instance_list=""
+  local sep=""
+
+  while [ $# -gt 0 ]; do
+    instance_list="${instance_list}${sep}$1"
+    sep=","
+    shift
+  done
+
+  cloud_sql_proxy -dir /tmp -instances "$instance_list"
+}
+
 #function kct() {
 #  kubectl --context gke_tencentafrica-testing-joox_europe-west4_main "$@"
 #}
