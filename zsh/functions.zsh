@@ -45,16 +45,31 @@ function cloudsql() {
     return 1
   fi
 
+  # Create the directory if it doesn't exist.
+  if [ ! -d /tmp/cloudsql ]; then
+    echo "Creating the /tmp/cloudsql directory. Please provide your password if prompted."
+    sudo mkdir -p /tmp/cloudsql
+    sudo chown "$(id -un):$(id -gn)" /tmp/cloudsql
+  fi
+
   local instance_list=""
   local sep=""
+  local help="Connections are available on the following sockets:\n"
 
-  while [ $# -gt 0 ]; do
-    instance_list="${instance_list}${sep}$1"
-    sep=","
-    shift
-  done
+  # If no args are given, then default to the tencentafrica-*-joox projects.
+  if [ $# -lt 1 ]; then
+    cloud_sql_proxy -dir /tmp/cloudsql -projects tencentafrica-testing-joox,tencentafrica-prod-joox,ta-org-prod
+  else
+    while [ $# -gt 0 ]; do
+      instance_list="${instance_list}${sep}$1"
+      help="$help - /tmp/cloudsql/$1\n"
+      sep=","
+      shift
+    done
 
-  cloud_sql_proxy -dir /tmp -instances "$instance_list"
+    echo "$help"
+    cloud_sql_proxy -dir /tmp/cloudsql -instances "$instance_list"
+  fi
 }
 
 #function kct() {
