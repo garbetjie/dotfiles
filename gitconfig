@@ -66,3 +66,5 @@ lg = log --graph --pretty='%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %
 
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
