@@ -45,6 +45,8 @@
       force: true
     ~/Library/Application Support/iTerm2/shell_integration.zsh:
       path: iterm2/shell_integration.zsh
+    ~/.local/bin/git-oldbranches:
+      path: scripts/git-oldbranches.py
 
 - shell:
   - command: |
