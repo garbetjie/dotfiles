@@ -47,9 +47,8 @@ function cloudsql() {
 
   # Create the directory if it doesn't exist.
   if [ ! -d /tmp/cloudsql ]; then
-    echo "Creating the /tmp/cloudsql directory. Please provide your password if prompted."
-    sudo mkdir -p /tmp/cloudsql
-    sudo chown "$(id -un):$(id -gn)" /tmp/cloudsql
+    mkdir -p /tmp/cloudsql
+    echo "Created the /tmp/cloudsql directory."
   fi
 
   local instance_list=""
