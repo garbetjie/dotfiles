@@ -30,7 +30,7 @@
   # shell history handling
   export HISTSIZE=1000000
   export HISTFILESIZE=1000000
-  setopt HIST_FIND_NO_DUPS HIST_IGNORE_DUPS SHARE_HISTORY
+  setopt HIST_FIND_NO_DUPS HIST_IGNORE_DUPS INC_APPEND_HISTORY
 # }}}
 
 
@@ -56,4 +56,8 @@
   export ANDROID_SDK_ROOT ANDROID_HOME GOPATH PATH
   # TODO Figure out better formatting for iTerm2 command mark.
 #  export ITERM2_SQUELCH_MARK=1
+# }}}
+
+# asdf version manager integration {{{
+  . "${brew_prefix}/opt/asdf/libexec/asdf.sh"
 # }}}
