@@ -1,8 +1,15 @@
 Include conf.d/*.conf
 
+Match exec "~/Workspace/garbetjie/dotfiles/ssh/is_workspace.sh tencent"
+    IdentityFile ~/.ssh/keys/tencent
+    IdentitiesOnly yes
+
+Match exec "~/Workspace/garbetjie/dotfiles/ssh/is_workspace.sh"
+    IdentityFile ~/.ssh/keys/personal
+    IdentitiesOnly yes
+
 Host *
     AddKeysToAgent yes
     Compression yes
-    IdentityFile ~/.ssh/keys/personal
     ServerAliveInterval 30s
     UseKeychain yes
