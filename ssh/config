@@ -1,10 +1,10 @@
 Include conf.d/*.conf
 
-Match exec "~/Workspace/garbetjie/dotfiles/ssh/is_workspace.sh tencent"
+Match exec "%d/.dotfiles/ssh/verify-workspace.sh tencentafrica"
     IdentityFile ~/.ssh/keys/tencent
     IdentitiesOnly yes
 
-Match exec "~/Workspace/garbetjie/dotfiles/ssh/is_workspace.sh"
+Match exec "%d/.dotfiles/ssh/verify-workspace.sh garbetjie"
     IdentityFile ~/.ssh/keys/personal
     IdentitiesOnly yes
 
