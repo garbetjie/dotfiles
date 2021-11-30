@@ -34,6 +34,7 @@
     ~/.dive.yaml:
     ~/.gitignore:
     ~/.gitconfig:
+    ~/.dotfiles: .
     ~/.gitconfig-tencent:
     ~/.ssh/conf.d: ssh/conf.d
     ~/.ssh/config: ssh/config
