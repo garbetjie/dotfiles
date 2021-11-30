@@ -5,6 +5,8 @@ set -e
 keyfile_path="$HOME/.ssh/keys"
 signed_in=false
 
+# Arg structure: {$key_name}:{$passphrase_uuid}:{$privkey_uuid}
+
 sign_in() {
   if [ "$signed_in" = false ]; then
     signed_in=true
@@ -24,8 +26,11 @@ while [ $# -gt 0 ]; do
   if [ ! -f "$privkey_path" ] || [ ! -f "$pubkey_path" ]; then
     sign_in
 
-    passphrase="$(op get item "$passphrase_uuid" | jq -r .details.password)"
-    echo "If prompted, use the following passphrase for the public SSH key: ${passphrase}"
+    # Only if the passphrase of a UUID is provided should we attempt to fetch the passphrase.
+    if [ "$passphrase_uuid" != "" ]; then
+      passphrase="$(op get item "$passphrase_uuid" | jq -r .details.password)"
+      echo "If prompted, use the following passphrase for the public SSH key: ${passphrase}"
+    fi
   fi
 
   # Create the private key if it doesn't exist.
@@ -33,7 +38,7 @@ while [ $# -gt 0 ]; do
     sign_in
 
     privkey_contents="$(op get document "$privkey_uuid")"
-    echo "$privkey_contents" > "$privkey_path"
+    printf "%s" "$privkey_contents" > "$privkey_path"
     chmod 0600 "$privkey_path"
     ssh-add -K "$privkey_path"
   fi

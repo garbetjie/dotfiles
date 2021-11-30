@@ -59,8 +59,9 @@
     quiet: true
 
   - |
-    scripts/sshkeys.zsh \
+    scripts/populate-ssh-keys.zsh \
       personal:ubckouhr3vd4njzutpc3k64la4:otdk3omgpbatxkq4ultfxghyui \
+      aws-personal::bol2wf63r5frvhzqtg2zbbw5ma \
       tencent:7rh4f2nyvfg3hpxn53qxun6jke:ye3wb6dg7ja3bpbkfg4hv354ny
 
 - shell:
