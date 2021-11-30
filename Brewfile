@@ -1,9 +1,11 @@
 tap "envkey/envkey"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "aws/tap"
 
 brew "asdf"
 brew "awscli"
+brew "aws-sam-cli"
 brew "axel"
 brew "bat"
 brew "composer"
