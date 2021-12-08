@@ -83,6 +83,8 @@ cask "font-inconsolata-g-for-powerline"
 cask "font-iosevka"
 cask "font-iosevka-nerd-font"
 cask "font-monoid"
+cask "font-open-sans"
+cask "font-open-sans-condensed"
 # cask "font-noto-nerd-font-mono"  # no longer available
 cask "font-roboto-mono"
 cask "font-roboto-mono-for-powerline"
@@ -111,8 +113,8 @@ cask "steam"
 cask "sublime-text"
 cask "transmission"
 # cask "tuntap"  # no longer available
-cask "virtualbox"
-cask "virtualbox-extension-pack"
+# cask "virtualbox"  # not available on ARM64
+# cask "virtualbox-extension-pack"  # not available on ARM64
 cask "visual-studio-code"
 cask "vlc"
 # cask "wechat"  # via App Store.
