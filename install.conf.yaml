@@ -50,20 +50,9 @@
       path: scripts/git-oldbranches.py
 
 - shell:
-  - command: |
-      local email
-      printf 'Email address used to log into 1password: '
-      read email
-
-      op signin my.1password.com "$email"
-    description: Log into 1Password.
-    quiet: true
-
-  - |
-    scripts/populate-ssh-keys.zsh \
-      personal:ubckouhr3vd4njzutpc3k64la4:otdk3omgpbatxkq4ultfxghyui \
-      aws-personal::bol2wf63r5frvhzqtg2zbbw5ma \
-      tencent:7rh4f2nyvfg3hpxn53qxun6jke:ye3wb6dg7ja3bpbkfg4hv354ny
+  - 'read -r "email?Email address used to log into 1password: " && op signin my.1password.com "$email"'
+  - scripts/provision-ssh-keys.zsh
+  - scripts/provision-aws.zsh
 
 - shell:
   - defaults write com.apple.Finder FXPreferredViewStyle clmv
@@ -84,12 +73,3 @@
   - osacompile -o '/Applications/Color Picker.app' -e 'choose color'  # TODO Add an icon.
   - killall Finder
   - killall Dock
-
-- shell:
-  - gcloud components update --quiet
-  - gcloud components install cloud_sql_proxy --quiet
-  - |
-    cd ~/.local/bin
-    wget -O- https://github.com/envkey/envkey-source/releases/download/v1.2.10/envkey-source_1.2.10_darwin_arm64.tar.gz | tar -zxf - envkey-source
-    wget -O- https://github.com/envkey/envkey-fetch/releases/download/v1.2.9/envkey-fetch_1.2.9_darwin_arm64.tar.gz | tar -zxf - envkey-fetch
-    chmod +x envkey-*
