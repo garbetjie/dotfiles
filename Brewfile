@@ -2,6 +2,7 @@ tap "envkey/envkey"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "aws/tap"
+tap "homebrew/cask-versions"
 
 brew "asdf"
 brew "awscli"
@@ -98,8 +99,8 @@ cask "hammerspoon"
 cask "intellij-idea"
 cask "iterm2"
 cask "krisp"
-cask "microsoft-excel"
-cask "microsoft-word"
+# cask "microsoft-excel"
+# cask "microsoft-word"
 cask "mysqlworkbench"
 cask "netspot"
 cask "ngrok"
@@ -117,6 +118,7 @@ cask "transmission"
 # cask "virtualbox"  # not available on ARM64
 # cask "virtualbox-extension-pack"  # not available on ARM64
 cask "visual-studio-code"
+cask "visual-studio"
 cask "vlc"
 # cask "wechat"  # via App Store.
 # cask "whatsapp"  # via App Store.
