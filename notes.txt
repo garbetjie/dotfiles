@@ -1,0 +1,8 @@
+* populate the /etc/wsl.conf file.
+* install required packages (zsh).
+* set set default to zsh.
+* populate zsh config files.
+* install nix (https://ariya.io/2020/05/nix-package-manager-on-ubuntu-or-debian | https://ariya.io/2016/06/isolated-development-environment-using-nix)
+* install packages:
+  * awscli
+  * docker dive alias 
