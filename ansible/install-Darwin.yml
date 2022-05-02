@@ -1,0 +1,83 @@
+---
+- name: Install Xcode tools.
+  shell: xcode-select --install || true
+
+- name: Install Rosetta.
+  become: true
+  shell: softwareupdate --install-rosetta --agree-to-license || true
+
+- name: Install Homebrew.
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+- name: Disable Gatekeeper
+  become: true
+  shell: spctl --master-disable
+
+- name: Tap Homebrew formulae repositories.
+  community.general.homebrew_tap:
+    tap: "{{ item.tap | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  loop:
+  - { tap: "envkey/envkey", state: "absent" }
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - aws/tap
+  - homebrew/cask-versions
+
+- name: Install Homebrew bundles.
+  community.general.homebrew:
+    formula: "{{ item.formula | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  loop:
+  - { formula: asdf, state: absent }
+  - awscli
+  - aws-sam-cli
+  - axel
+  - bat
+  - composer
+  - coreutils
+  - diff-so-fancy
+  - direnv
+  - dive
+  - { formula: dnsmasq, state: absent }
+  - exiftool
+  - ffmpeg
+  - git-lfs
+  - gnu-sed
+  - gnu-tar
+  - { formula: graphite2, state: absent }
+  - { formula: graphviz, state: absent }
+  - grep
+  - htop
+  - jq
+  - { formula: kustomize, state: absent }
+  - mysql-client
+  - mtr
+  - node
+  - optipng
+  - { formula: opus-tools, state: absent }
+  - { formula: opusfile, state: absent }
+  - p7zip
+  - { formula: php@7.4, state: absent }
+  - { formula: php, state: absent }
+  - { formula: qrencode, state: absent }
+  - socat
+  - sqlite
+  - starship
+  - svn
+  - telnet
+  - terraform
+  - tmux
+  - tree
+  - wget
+  - youtube-dl
+  - yq
+  - { formula: "envkey-fetch", state: "absent" }
+  - { formula: "envkey-source", state: "absent" }
+  - { formula: "php@7.3", state: "absent" }
+  - { formula: "shellcheck", state: "{{ 'absent' if lookup('vars', 'ansible_architecture') == 'arm64' else 'present' }}" }
+
+
+- name: Enable Gatekeeper
+  become: true
+  shell: sudo spctl --master-enable
