@@ -20,3 +20,4 @@ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 nix-env -i ansible-core
 
 # Run ansible.
+ansible -i localhost playbook.yaml
