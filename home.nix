@@ -52,7 +52,7 @@
   home.file = with config.lib.file; {
     dive = {
         source = mkOutOfStoreSymlink ./dive.yaml;
-        target = ".dive.yaml";
+        target = ".config/dive/dive.yaml";
     };
     config-nixpkgs-home = {
         source = mkOutOfStoreSymlink ./home.nix;
