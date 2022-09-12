@@ -1,5 +1,0 @@
-[core]
-sshCommand = "ssh -i ~/.ssh/keys/tencent -F /dev/null"
-
-[user]
-email = geoff@tencent.co.za
