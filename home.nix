@@ -275,6 +275,7 @@
 			".." = "cd ..";
 			"..." = "cd ../..";
 			cat = "bat -P";
+			sail = "./vendor/bin/sail";
 			less = "bat";
 			ll = "ls -lahG";
 		};
