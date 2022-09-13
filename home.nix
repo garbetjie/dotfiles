@@ -35,7 +35,6 @@
     mysql-client
     mtr
     optipng
-#    nodejs-16_x
     p7zip
     shellcheck
     socat
@@ -263,6 +262,9 @@
 		enable = true;
 		enableAutosuggestions = true;
 		enableSyntaxHighlighting = true;
+		envExtra = lib.strings.concatStringsSep "\n" [
+			(if pkgs.stdenv.hostPlatform.isDarwin then "PATH=\"/opt/homebrew/bin:$PATH\"" else null)
+		];
 		autocd = true;
 		dirHashes = {
 			w = "~/Workspace";
