@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the
@@ -281,7 +281,7 @@
 		};
 	};
 
-	targets.darwin.defaults = {
+	targets.darwin.defaults = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
 		com.apple.Finder = {
 			FXPreferredViewStyle = "clmv";
 			_FXSortFoldersFirst = true;
