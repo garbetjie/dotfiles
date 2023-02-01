@@ -29,6 +29,7 @@
     gnugrep
     gnused
     gnutar
+    google-cloud-sdk
     htop
     inetutils
     jq
